@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Tirumala IIT & Medical Academy
  * Core JavaScript: Navigation, iOS Glassmorphic Dock, Spotlight Search, Language Toggle
  */

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Contact Us Page - Tirumala IIT & Medical Academy
  * Complete directory for all 5 campuses, embedded map, and enquiry form.

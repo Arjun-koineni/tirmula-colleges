@@ -1,5 +1,9 @@
 <?php
 // Vercel Serverless PHP Router for Tirumala College
+if (!ob_get_level()) {
+    ob_start();
+}
+
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Normalize trailing slashes

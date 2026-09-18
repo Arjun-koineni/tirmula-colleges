@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Shared Footer Component
  * Tirumala IIT & Medical Academy

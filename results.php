@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Results Page - Tirumala IIT & Medical Academy
  * Includes interactive multi-filtering & "Check Your Result" search

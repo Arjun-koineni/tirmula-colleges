@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Main Landing Page
  * Tirumala IIT & Medical Academy
