@@ -1,9 +1,10 @@
-<?php
+﻿<?php
 /**
- * Homepage - Tirumala IIT & Medical Academy
+ * Main Landing Page
+ * Tirumala IIT & Medical Academy
  */
-$pageTitle = "Home | Premier IIT-JEE, NEET & School Education in Andhra Pradesh";
-$currentNav = "home";
+$pageTitle = "Tirumala IIT & Medical Academy | Premier Coaching in Andhra Pradesh";
+$currentNav = 'home';
 $metaDesc = "Tirumala IIT & Medical Academy: Leading Andhra Pradesh in IIT-JEE, NEET & EAPCET coaching with 42,600+ students, 9 schools, and 17 junior colleges.";
 require_once __DIR__ . '/includes/header.php';
 
@@ -28,25 +29,24 @@ try {
   <!-- Subtle Background Geometric Accents -->
   <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
   <div class="absolute -right-24 -top-24 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
-      <!-- Hero Left: Content & CTAs -->
+      <!-- Hero Left: Mission & Badges -->
       <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-semibold tracking-wide text-amber-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          <span data-i18n="hero_badge">Admissions Open 2025-26</span>
-          <span class="text-white/60">•</span>
-          <span>Scholarship Tests Active</span>
+        
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-amber-300 font-medium">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span data-i18n="hero_badge">Admissions Open 2025-26 • Scholarship Tests Active</span>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight" data-i18n="hero_title">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight" data-i18n="hero_title">
           Empowering Students for <span class="text-amber-400">IIT-JEE</span>, <span class="text-emerald-400">NEET</span> & Academic Mastery
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0" data-i18n="hero_desc">
+        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed" data-i18n="hero_desc">
           South India's premier educational group with 9 schools and 17 junior colleges across Andhra Pradesh, guiding 42,600+ young minds towards nation-leading ranks with individual mentorship.
         </p>
 
@@ -126,7 +126,7 @@ try {
 
             <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg shadow transition transform active:scale-95 text-sm flex items-center justify-center gap-2">
               <span>Submit Admissions Enquiry</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-5 5m5-5H6"/></svg>
             </button>
             <p class="text-[11px] text-center text-slate-400">Your details remain strictly confidential.</p>
           </form>
@@ -154,21 +154,22 @@ try {
         <p class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider" data-i18n="trust_colleges">Junior Colleges</p>
       </div>
       <div class="space-y-1">
-        <p class="text-3xl sm:text-5xl font-black text-red-400 tracking-tight">2011</p>
+        <p class="text-3xl sm:text-5xl font-black text-blue-400 tracking-tight">2011</p>
         <p class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider" data-i18n="trust_years">Founded (15+ Years Trust)</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 3. LATEST RESULTS BANNER (Database Driven) -->
-<section class="py-16 bg-slate-50">
+<!-- 3. OUTSTANDING RESULTS & STATE RANKS (With Round Student Avatars) -->
+<section class="py-20 bg-slate-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
       <div>
         <span class="text-blue-700 font-bold text-xs uppercase tracking-widest">Proven Track Record</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-tnavy mt-1">Outstanding Results & State Ranks</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Celebrating our exceptional toppers in IIT-JEE Advanced, NEET & Board Examinations.</p>
       </div>
       <a href="/results.php" class="inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-800 group">
         <span>View Full Results Archive</span>
@@ -180,25 +181,66 @@ try {
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php if (!empty($featuredResults)): ?>
         <?php foreach ($featuredResults as $res): ?>
-          <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden card-hover-lift flex flex-col justify-between">
+          <?php
+            // Assign verified student portrait photos
+            $studentPhoto = '/assets/images/round_logo.png';
+            $sName = $res['student_name'];
+            if (stripos($sName, 'Sai Teja') !== false) {
+                $studentPhoto = '/assets/images/student_sai_teja.jpg';
+            } elseif (stripos($sName, 'Sravani') !== false) {
+                $studentPhoto = '/assets/images/student_sravani.jpg';
+            } elseif (stripos($sName, 'Rohan') !== false) {
+                $studentPhoto = '/assets/images/student_rohan.jpg';
+            } elseif (stripos($sName, 'Harshitha') !== false) {
+                $studentPhoto = '/assets/images/student_harshitha.jpg';
+            } elseif (stripos($sName, 'Lokesh') !== false) {
+                $studentPhoto = '/assets/images/student_lokesh.jpg';
+            } elseif (!empty($res['photo_url'])) {
+                $studentPhoto = '/' . ltrim($res['photo_url'], '/');
+            }
+          ?>
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 overflow-hidden card-hover-lift flex flex-col justify-between transition-all duration-300">
             <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-3">
-                <span class="bg-blue-50 text-tnavy border border-blue-200 text-xs font-bold px-2.5 py-0.5 rounded-full">
+              
+              <!-- Card Top: Exam Type & Campus -->
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="bg-blue-50 text-blue-800 border border-blue-200 text-xs font-bold px-3 py-1 rounded-full shadow-xs">
                   <?php echo htmlspecialchars($res['exam_type']); ?>
                 </span>
-                <span class="text-xs text-slate-400 font-medium"><?php echo htmlspecialchars($res['campus']); ?></span>
+                <span class="text-xs text-slate-500 font-medium flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                  <?php echo htmlspecialchars($res['campus']); ?>
+                </span>
               </div>
-              <h3 class="text-xl font-bold text-slate-900"><?php echo htmlspecialchars($res['student_name']); ?></h3>
-              <p class="text-xs text-slate-500 mt-0.5">Roll No: <?php echo htmlspecialchars($res['roll_number']); ?> • Stream: <?php echo htmlspecialchars($res['stream']); ?></p>
+
+              <!-- Student Profile: Circular Image + Credentials -->
+              <div class="flex items-center gap-4 mb-4">
+                <div class="relative flex-shrink-0">
+                  <img src="<?php echo htmlspecialchars($studentPhoto); ?>" alt="<?php echo htmlspecialchars($res['student_name']); ?>" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-amber-400 shadow-md ring-4 ring-amber-100">
+                  <span class="absolute -bottom-1 -right-1 bg-amber-500 text-slate-950 text-[9px] font-black px-1.5 py-0.5 rounded-full shadow-sm uppercase">AIR</span>
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-lg sm:text-xl font-bold text-slate-900 leading-tight truncate"><?php echo htmlspecialchars($res['student_name']); ?></h3>
+                  <p class="text-xs text-slate-500 mt-1">Roll: <span class="font-medium text-slate-700"><?php echo htmlspecialchars($res['roll_number']); ?></span></p>
+                  <p class="text-xs font-semibold text-blue-700 mt-0.5">Stream: <?php echo htmlspecialchars($res['stream']); ?></p>
+                </div>
+              </div>
               
-              <div class="mt-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/60 rounded-lg p-3">
-                <span class="text-xs font-semibold text-amber-800 uppercase tracking-wider block">Rank / Score Achieved</span>
-                <span class="text-lg font-black text-amber-900"><?php echo htmlspecialchars($res['score_or_rank']); ?></span>
+              <!-- Rank / Score Highlight Badge -->
+              <div class="bg-gradient-to-r from-amber-50 via-orange-50/50 to-amber-50/80 border border-amber-200/80 rounded-xl p-3.5 shadow-xs">
+                <span class="text-[11px] font-bold text-amber-800 uppercase tracking-wider block">Rank / Score Achieved</span>
+                <span class="text-xl font-black text-amber-950 mt-0.5 block"><?php echo htmlspecialchars($res['score_or_rank']); ?></span>
               </div>
+
             </div>
-            <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span>Year <?php echo htmlspecialchars($res['year']); ?></span>
-              <a href="/results.php?search=<?php echo urlencode($res['roll_number']); ?>" class="text-blue-700 font-bold hover:underline">Verify Result →</a>
+
+            <!-- Card Footer -->
+            <div class="bg-slate-50 px-6 py-3.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span class="font-medium">Year <?php echo htmlspecialchars($res['year']); ?></span>
+              <a href="/results.php?search=<?php echo urlencode($res['roll_number']); ?>" class="text-blue-700 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">
+                <span>Verify Result</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
         <?php endforeach; ?>
@@ -212,7 +254,7 @@ try {
   </div>
 </section>
 
-<!-- 4. LEADERSHIP VISION (Sri N. Tirumala Rao, Sri G. Satish Babu, Dr. Sri Rasmi Nunna) -->
+<!-- 4. LEADERSHIP VISION -->
 <section class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -265,69 +307,105 @@ try {
   </div>
 </section>
 
-<!-- 5. FIVE AP CAMPUS LOCATIONS -->
-<section class="py-16 bg-slate-900 text-white">
+<!-- 5. FIVE AP CAMPUS LOCATIONS (Clickable to Google Maps) -->
+<section class="py-20 bg-gradient-to-b from-slate-900 to-[#071533] text-white relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-12">
       <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Statewide Network</span>
-      <h2 class="text-3xl font-extrabold text-white mt-1">Our Premier Campus Hubs</h2>
-      <p class="text-slate-400 text-sm mt-2">World-class infrastructure, air-conditioned classrooms, labs, and residential facilities across Andhra Pradesh.</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Our Premier Campus Hubs</h2>
+      <p class="text-slate-300 text-sm mt-2">Click any campus location below to open directions in Google Maps.</p>
     </div>
 
+    <!-- 5 Campus Grid with Google Maps Links -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
       
-      <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700/80 text-center space-y-2 card-hover-lift">
-        <div class="text-3xl">🏛️</div>
-        <h3 class="font-bold text-white text-base">Rajamahendravaram</h3>
-        <p class="text-xs text-amber-400 font-medium">Central Headquarters</p>
-        <p class="text-[11px] text-slate-400">Katheru Main Campus, School & Colleges</p>
-      </div>
+      <!-- 1. Rajamahendravaram -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+IIT+Academy+Katheru+Rajahmundry" target="_blank" rel="noopener noreferrer" class="group bg-slate-800/80 hover:bg-slate-800 rounded-2xl p-5 border border-slate-700 hover:border-amber-400/60 text-center space-y-2.5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="text-3xl mb-2">🏛️</div>
+          <h3 class="font-bold text-white text-base group-hover:text-amber-400 transition">Rajamahendravaram</h3>
+          <p class="text-xs text-amber-400 font-semibold">Central Headquarters</p>
+          <p class="text-[11px] text-slate-400 mt-1">Katheru Main Campus, School & Colleges</p>
+        </div>
+        <div class="pt-2 border-t border-slate-700/60 flex items-center justify-center gap-1.5 text-xs text-slate-400 group-hover:text-amber-300 font-semibold transition">
+          <span>Open on Maps</span>
+          <span class="text-amber-400">↗</span>
+        </div>
+      </a>
 
-      <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700/80 text-center space-y-2 card-hover-lift">
-        <div class="text-3xl">🌊</div>
-        <h3 class="font-bold text-white text-base">Visakhapatnam</h3>
-        <p class="text-xs text-amber-400 font-medium">Port City Hub</p>
-        <p class="text-[11px] text-slate-400">Maddilapalem & MVP Colony Campuses</p>
-      </div>
+      <!-- 2. Visakhapatnam -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+Junior+College+Maddilapalem+Visakhapatnam" target="_blank" rel="noopener noreferrer" class="group bg-slate-800/80 hover:bg-slate-800 rounded-2xl p-5 border border-slate-700 hover:border-blue-400/60 text-center space-y-2.5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="text-3xl mb-2">🌊</div>
+          <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">Visakhapatnam</h3>
+          <p class="text-xs text-amber-400 font-semibold">Port City Hub</p>
+          <p class="text-[11px] text-slate-400 mt-1">Maddilapalem & MVP Colony Campuses</p>
+        </div>
+        <div class="pt-2 border-t border-slate-700/60 flex items-center justify-center gap-1.5 text-xs text-slate-400 group-hover:text-blue-300 font-semibold transition">
+          <span>Open on Maps</span>
+          <span class="text-blue-400">↗</span>
+        </div>
+      </a>
 
-      <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700/80 text-center space-y-2 card-hover-lift">
-        <div class="text-3xl">🌾</div>
-        <h3 class="font-bold text-white text-base">Bhimavaram</h3>
-        <p class="text-xs text-amber-400 font-medium">Delta Hub</p>
-        <p class="text-[11px] text-slate-400">PP Road School & Junior College</p>
-      </div>
+      <!-- 3. Bhimavaram -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+School+PP+Road+Bhimavaram" target="_blank" rel="noopener noreferrer" class="group bg-slate-800/80 hover:bg-slate-800 rounded-2xl p-5 border border-slate-700 hover:border-emerald-400/60 text-center space-y-2.5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="text-3xl mb-2">🌾</div>
+          <h3 class="font-bold text-white text-base group-hover:text-emerald-400 transition">Bhimavaram</h3>
+          <p class="text-xs text-amber-400 font-semibold">Delta Hub</p>
+          <p class="text-[11px] text-slate-400 mt-1">PP Road School & Junior College</p>
+        </div>
+        <div class="pt-2 border-t border-slate-700/60 flex items-center justify-center gap-1.5 text-xs text-slate-400 group-hover:text-emerald-300 font-semibold transition">
+          <span>Open on Maps</span>
+          <span class="text-emerald-400">↗</span>
+        </div>
+      </a>
 
-      <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700/80 text-center space-y-2 card-hover-lift">
-        <div class="text-3xl">🌴</div>
-        <h3 class="font-bold text-white text-base">Tanuku</h3>
-        <p class="text-xs text-amber-400 font-medium">Academic Center</p>
-        <p class="text-[11px] text-slate-400">Near Overbridge, High School & Inter</p>
-      </div>
+      <!-- 4. Tanuku -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+Junior+College+Tanuku" target="_blank" rel="noopener noreferrer" class="group bg-slate-800/80 hover:bg-slate-800 rounded-2xl p-5 border border-slate-700 hover:border-amber-400/60 text-center space-y-2.5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="text-3xl mb-2">🌴</div>
+          <h3 class="font-bold text-white text-base group-hover:text-amber-400 transition">Tanuku</h3>
+          <p class="text-xs text-amber-400 font-semibold">Academic Center</p>
+          <p class="text-[11px] text-slate-400 mt-1">Near Overbridge, High School & Inter</p>
+        </div>
+        <div class="pt-2 border-t border-slate-700/60 flex items-center justify-center gap-1.5 text-xs text-slate-400 group-hover:text-amber-300 font-semibold transition">
+          <span>Open on Maps</span>
+          <span class="text-amber-400">↗</span>
+        </div>
+      </a>
 
-      <div class="bg-slate-800/80 rounded-xl p-5 border border-slate-700/80 text-center space-y-2 card-hover-lift">
-        <div class="text-3xl">🛣️</div>
-        <h3 class="font-bold text-white text-base">Payakaraopeta</h3>
-        <p class="text-xs text-amber-400 font-medium">Highway Campus</p>
-        <p class="text-[11px] text-slate-400">Residential & Day Scholar Facilities</p>
-      </div>
+      <!-- 5. Payakaraopeta -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+Academy+Payakaraopeta" target="_blank" rel="noopener noreferrer" class="group bg-slate-800/80 hover:bg-slate-800 rounded-2xl p-5 border border-slate-700 hover:border-rose-400/60 text-center space-y-2.5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="text-3xl mb-2">🛣️</div>
+          <h3 class="font-bold text-white text-base group-hover:text-rose-400 transition">Payakaraopeta</h3>
+          <p class="text-xs text-amber-400 font-semibold">Highway Campus</p>
+          <p class="text-[11px] text-slate-400 mt-1">Residential & Day Scholar Facilities</p>
+        </div>
+        <div class="pt-2 border-t border-slate-700/60 flex items-center justify-center gap-1.5 text-xs text-slate-400 group-hover:text-rose-300 font-semibold transition">
+          <span>Open on Maps</span>
+          <span class="text-rose-400">↗</span>
+        </div>
+      </a>
 
     </div>
   </div>
 </section>
 
-<!-- 6. CALL TO ACTION STRIP -->
-<section class="py-14 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white text-center">
+<!-- 6. CALL TO ACTION STRIP (Royal Blue Academic Theme) -->
+<section class="py-14 bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white text-center border-t border-blue-700/40">
   <div class="max-w-4xl mx-auto px-4 space-y-4">
     <h2 class="text-3xl sm:text-4xl font-black">Begin Your Journey to IIT & Medical Excellence</h2>
-    <p class="text-sm sm:text-base text-rose-100 max-w-2xl mx-auto">
+    <p class="text-sm sm:text-base text-blue-100 max-w-2xl mx-auto">
       Speak with our senior counseling team or visit our central campus at Katheru, Rajamahendravaram.
     </p>
     <div class="pt-2 flex flex-wrap items-center justify-center gap-4">
-      <a href="/admissions.php" class="bg-white hover:bg-slate-100 text-red-700 font-bold px-8 py-3 rounded-lg shadow-lg text-sm transition">
+      <a href="/admissions.php" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 py-3.5 rounded-xl shadow-lg text-sm transition transform hover:-translate-y-0.5">
         Apply for 2025-26 Admission
       </a>
-      <a href="tel:<?php echo INSTITUTE_PHONE_TEL; ?>" class="bg-red-800/70 hover:bg-red-900 text-white font-semibold px-6 py-3 rounded-lg border border-red-400 text-sm transition flex items-center gap-2">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+      <a href="tel:<?php echo INSTITUTE_PHONE_TEL; ?>" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/20 text-sm transition flex items-center gap-2 backdrop-blur-sm">
+        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
         <span>Call: <?php echo INSTITUTE_PHONE; ?></span>
       </a>
     </div>

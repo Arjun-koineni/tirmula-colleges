@@ -1,4 +1,4 @@
--- ==========================================================
+﻿-- ==========================================================
 -- Tirumala IIT & Medical Academy
 -- MySQL Database Dump & Schema Definition
 -- Shared Hosting / cPanel / phpMyAdmin Compatible
@@ -46,14 +46,14 @@ CREATE TABLE `results` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `results` (`student_name`, `roll_number`, `stream`, `exam_type`, `year`, `campus`, `score_or_rank`, `photo_url`, `featured`) VALUES
-('K. Sai Teja', 'TIMA202401', 'MPC', 'JEE Advanced', 2024, 'Rajamahendravaram', 'AIR 142 (Top in AP)', 'assets/images/jee_adv_result.jpg', 1),
-('V. Sravani', 'TIMA202402', 'BiPC', 'NEET', 2024, 'Visakhapatnam', 'Score: 695/720 (AIR 218)', 'assets/images/neet_result.jpg', 1),
-('P. Rohan Kumar', 'TIMA202403', 'MPC', 'JEE Main', 2024, 'Bhimavaram', '99.94 Percentile', 'assets/images/inter_mpc_result.jpg', 1),
-('M. Harshitha', 'TIMA202404', 'BiPC', 'IPE Inter', 2024, 'Tanuku', '992/1000 State Rank 4', 'assets/images/inter_bipc_result.jpg', 1),
-('B. Lokesh', 'TIMA202405', 'Foundation', 'SSC Class 10', 2024, 'Payakaraopeta', '594/600 (GPA 10.0)', 'assets/images/ssc_result.jpg', 1),
-('D. Ananya', 'TIMA202406', 'MPC', 'JEE Advanced', 2024, 'Rajamahendravaram', 'AIR 384', 'assets/images/jee_adv_result.jpg', 0),
-('T. Vamsi Krishna', 'TIMA202407', 'BiPC', 'NEET', 2024, 'Visakhapatnam', 'Score: 678/720', 'assets/images/neet_result.jpg', 0),
-('S. Preethi', 'TIMA202408', 'MPC', 'IPE Inter', 2024, 'Bhimavaram', '988/1000', 'assets/images/inter_mpc_result.jpg', 0);
+('K. Sai Teja', 'TIMA202401', 'MPC', 'JEE Advanced', 2024, 'Rajamahendravaram', 'AIR 142 (Top in AP)', 'assets/images/student_sai_teja.jpg', 1),
+('V. Sravani', 'TIMA202402', 'BiPC', 'NEET', 2024, 'Visakhapatnam', 'Score: 695/720 (AIR 218)', 'assets/images/student_sravani.jpg', 1),
+('P. Rohan Kumar', 'TIMA202403', 'MPC', 'JEE Main', 2024, 'Bhimavaram', '99.94 Percentile', 'assets/images/student_rohan.jpg', 1),
+('M. Harshitha', 'TIMA202404', 'BiPC', 'IPE Inter', 2024, 'Tanuku', '992/1000 State Rank 4', 'assets/images/student_harshitha.jpg', 1),
+('B. Lokesh', 'TIMA202405', 'Foundation', 'SSC Class 10', 2024, 'Payakaraopeta', '594/600 (GPA 10.0)', 'assets/images/student_lokesh.jpg', 1),
+('D. Ananya', 'TIMA202406', 'MPC', 'JEE Advanced', 2024, 'Rajamahendravaram', 'AIR 384', 'assets/images/student_sai_teja.jpg', 0),
+('T. Vamsi Krishna', 'TIMA202407', 'BiPC', 'NEET', 2024, 'Visakhapatnam', 'Score: 678/720', 'assets/images/student_sravani.jpg', 0),
+('S. Preethi', 'TIMA202408', 'MPC', 'IPE Inter', 2024, 'Bhimavaram', '988/1000', 'assets/images/student_rohan.jpg', 0);
 
 -- ----------------------------------------------------------
 -- Table structure for notices
@@ -122,9 +122,9 @@ CREATE TABLE `gallery` (
 
 INSERT INTO `gallery` (`title`, `category`, `image_url`, `caption`) VALUES
 ('Annual Day & Merit Awards Celebration', 'Events', 'assets/images/chairman_tirumala_rao.png', 'Chairman Sri N. Tirumala Rao honoring state top rankers.'),
-('NEET All India Rankers Felicitation', 'Results', 'assets/images/neet_result.jpg', 'Celebrating Tirumala Academy medical entrance champions.'),
+('NEET All India Rankers Felicitation', 'Results', 'assets/images/student_sravani.jpg', 'Celebrating Tirumala Academy medical entrance champions.'),
 ('Inter-School Sports Meet & Athletic Championship', 'Games', 'assets/images/offcanvase.jpg', 'Students competing at the state-level athletic championship.'),
-('JEE Advanced State Toppers Recognition', 'Results', 'assets/images/jee_adv_result.jpg', 'IIT Bombay and IIT Madras qualifiers felicitated by MD G. Satish Babu.'),
+('JEE Advanced State Toppers Recognition', 'Results', 'assets/images/student_sai_teja.jpg', 'IIT Bombay and IIT Madras qualifiers felicitated by MD G. Satish Babu.'),
 ('Science Exhibition & Robotic Innovation Fair', 'Events', 'assets/images/director_satish_babu.jpg', 'Hands-on experiential learning by young innovators.'),
 ('Volleyball & Cricket Tournament Finals', 'Games', 'assets/images/round_logo.png', 'Annual sports carnival promoting holistic health & discipline.');
 
@@ -149,3 +149,4 @@ CREATE TABLE `enquiries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 1;
+

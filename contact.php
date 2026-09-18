@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Contact Us Page - Tirumala IIT & Medical Academy
  * Complete directory for all 5 campuses, embedded map, and enquiry form.
@@ -104,7 +104,7 @@ require_once __DIR__ . '/includes/header.php';
 
           <div class="space-y-3 text-xs text-slate-300 border-t border-slate-800 pt-4">
             <div class="flex items-start gap-3">
-              <span class="text-red-400 font-bold">📍</span>
+              <span class="text-red-400 font-bold">ðŸ“</span>
               <div>
                 <strong class="text-white block font-semibold">Campus Address:</strong>
                 <span>Katheru, Rajamahendravaram (Rajahmundry), Andhra Pradesh 533102</span>
@@ -112,7 +112,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="flex items-start gap-3">
-              <span class="text-amber-400 font-bold">📞</span>
+              <span class="text-amber-400 font-bold">ðŸ“ž</span>
               <div>
                 <strong class="text-white block font-semibold">Helpline:</strong>
                 <a href="tel:<?php echo INSTITUTE_PHONE_TEL; ?>" class="hover:text-amber-400 font-mono text-sm"><?php echo INSTITUTE_PHONE; ?></a>
@@ -120,7 +120,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="flex items-start gap-3">
-              <span class="text-emerald-400 font-bold">✉️</span>
+              <span class="text-emerald-400 font-bold">âœ‰ï¸</span>
               <div>
                 <strong class="text-white block font-semibold">Official Email:</strong>
                 <a href="mailto:<?php echo INSTITUTE_EMAIL; ?>" class="hover:text-emerald-400"><?php echo INSTITUTE_EMAIL; ?></a>
@@ -128,7 +128,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="flex items-start gap-3">
-              <span class="text-green-400 font-bold">💬</span>
+              <span class="text-green-400 font-bold">ðŸ’¬</span>
               <div>
                 <strong class="text-white block font-semibold">WhatsApp Admissions:</strong>
                 <a href="https://wa.me/<?php echo INSTITUTE_WHATSAPP; ?>" target="_blank" class="hover:underline text-green-400">+91 883 297 0077</a>
@@ -176,6 +176,12 @@ require_once __DIR__ . '/includes/header.php';
         <p class="text-slate-600">Katheru Main Campus, Near Morampudi Junction, Rajamahendravaram, East Godavari, AP 533102</p>
         <p class="font-semibold text-slate-800">Phone: <a href="tel:08832970077" class="text-tcrimson hover:underline">0883 297 0077</a></p>
         <p class="text-slate-500 text-[11px]">Courses: Schools (Classes 6-10), Jr. College (MPC, BiPC), Super 60 Residential</p>
+        <div class="pt-2">
+          <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+IIT+Academy+Katheru+Rajahmundry" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-800 hover:underline">
+            <span>Open in Google Maps</span>
+            <span>↗</span>
+          </a>
+        </div>
       </div>
 
       <!-- 2. Visakhapatnam -->
@@ -187,6 +193,12 @@ require_once __DIR__ . '/includes/header.php';
         <p class="text-slate-600">Maddilapalem & MVP Colony Main Road, Visakhapatnam, AP 530017</p>
         <p class="font-semibold text-slate-800">Phone: <a href="tel:08912784077" class="text-tcrimson hover:underline">0891 278 4077</a></p>
         <p class="text-slate-500 text-[11px]">Courses: IIT-JEE Elite Batches, NEET Intensive, Day Scholar & Hostel</p>
+        <div class="pt-2">
+          <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+Junior+College+Maddilapalem+Visakhapatnam" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-800 hover:underline">
+            <span>Open in Google Maps</span>
+            <span>↗</span>
+          </a>
+        </div>
       </div>
 
       <!-- 3. Bhimavaram -->
@@ -198,6 +210,12 @@ require_once __DIR__ . '/includes/header.php';
         <p class="text-slate-600">PP Road Campus, Near Sompeta Junction, Bhimavaram, West Godavari, AP 534202</p>
         <p class="font-semibold text-slate-800">Phone: <a href="tel:08816225077" class="text-tcrimson hover:underline">08816 225 077</a></p>
         <p class="text-slate-500 text-[11px]">Courses: High School Foundation, Intermediate IPE + Entrance</p>
+        <div class="pt-2">
+          <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+School+PP+Road+Bhimavaram" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-800 hover:underline">
+            <span>Open in Google Maps</span>
+            <span>↗</span>
+          </a>
+        </div>
       </div>
 
       <!-- 4. Tanuku -->
@@ -209,6 +227,12 @@ require_once __DIR__ . '/includes/header.php';
         <p class="text-slate-600">Near Overbridge, Bypass Road, Tanuku, West Godavari, AP 534211</p>
         <p class="font-semibold text-slate-800">Phone: <a href="tel:08819245077" class="text-tcrimson hover:underline">08819 245 077</a></p>
         <p class="text-slate-500 text-[11px]">Courses: Integrated Intermediate, Olympiad Foundation</p>
+        <div class="pt-2">
+          <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+Junior+College+Tanuku" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-800 hover:underline">
+            <span>Open in Google Maps</span>
+            <span>↗</span>
+          </a>
+        </div>
       </div>
 
       <!-- 5. Payakaraopeta -->
@@ -220,6 +244,12 @@ require_once __DIR__ . '/includes/header.php';
         <p class="text-slate-600">National Highway 16, Payakaraopeta, Anakapalli Dist, AP 531126</p>
         <p class="font-semibold text-slate-800">Phone: <a href="tel:08932233077" class="text-tcrimson hover:underline">08932 233 077</a></p>
         <p class="text-slate-500 text-[11px]">Courses: Residential High School, Girls & Boys A/C Hostel Wings</p>
+        <div class="pt-2">
+          <a href="https://www.google.com/maps/search/?api=1&query=Tirumala+Academy+Payakaraopeta" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-800 hover:underline">
+            <span>Open in Google Maps</span>
+            <span>↗</span>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -227,3 +257,4 @@ require_once __DIR__ . '/includes/header.php';
 </section>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
+

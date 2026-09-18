@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Results Page - Tirumala IIT & Medical Academy
  * Includes interactive multi-filtering & "Check Your Result" search
@@ -131,9 +131,27 @@ $initialSearch = isset($_GET['search']) ? trim($_GET['search']) : '';
 
             <!-- Student Profile & Score -->
             <div class="p-5 space-y-3">
-              <div>
-                <h3 class="text-lg font-bold text-slate-900 leading-tight"><?php echo htmlspecialchars($item['student_name']); ?></h3>
-                <p class="text-xs text-slate-500 mt-0.5">Roll No: <span class="font-mono font-semibold text-slate-700"><?php echo htmlspecialchars($item['roll_number']); ?></span></p>
+              <?php
+                $itemPhoto = '/assets/images/round_logo.png';
+                $sName = $item['student_name'];
+                if (stripos($sName, 'Sai Teja') !== false) {
+                    $itemPhoto = '/assets/images/student_sai_teja.jpg';
+                } elseif (stripos($sName, 'Sravani') !== false) {
+                    $itemPhoto = '/assets/images/student_sravani.jpg';
+                } elseif (stripos($sName, 'Rohan') !== false) {
+                    $itemPhoto = '/assets/images/student_rohan.jpg';
+                } elseif (stripos($sName, 'Harshitha') !== false) {
+                    $itemPhoto = '/assets/images/student_harshitha.jpg';
+                } elseif (stripos($sName, 'Lokesh') !== false) {
+                    $itemPhoto = '/assets/images/student_lokesh.jpg';
+                }
+              ?>
+              <div class="flex items-center gap-3.5">
+                <img src="<?php echo htmlspecialchars($itemPhoto); ?>" alt="<?php echo htmlspecialchars($item['student_name']); ?>" class="w-14 h-14 rounded-full object-cover border-2 border-amber-400 ring-2 ring-amber-100 flex-shrink-0 shadow-sm">
+                <div class="min-w-0">
+                  <h3 class="text-base font-bold text-slate-900 leading-tight truncate"><?php echo htmlspecialchars($item['student_name']); ?></h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Roll No: <span class="font-mono font-semibold text-slate-700"><?php echo htmlspecialchars($item['roll_number']); ?></span></p>
+                </div>
               </div>
 
               <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/80 rounded-lg p-3">
@@ -162,7 +180,7 @@ $initialSearch = isset($_GET['search']) ? trim($_GET['search']) : '';
             <?php else: ?>
               <span class="text-slate-400">Verified Result</span>
             <?php endif; ?>
-            <span class="text-emerald-600 font-medium">✓ Verified</span>
+            <span class="text-emerald-600 font-medium">âœ“ Verified</span>
           </div>
         </div>
       <?php endforeach; ?>
@@ -170,7 +188,7 @@ $initialSearch = isset($_GET['search']) ? trim($_GET['search']) : '';
 
     <!-- Empty State -->
     <div id="results-empty-state" class="hidden text-center py-16 bg-white rounded-2xl border border-dashed border-slate-300 mt-6 space-y-3">
-      <div class="text-4xl">🔍</div>
+      <div class="text-4xl">ðŸ”</div>
       <h3 class="text-lg font-bold text-slate-800">No matching student result found</h3>
       <p class="text-xs text-slate-500 max-w-sm mx-auto">
         Please check the spelling of the name, enter the complete roll number (e.g. TIMA202401), or clear filters.
@@ -187,3 +205,4 @@ $initialSearch = isset($_GET['search']) ? trim($_GET['search']) : '';
 <script src="/assets/js/results-search.js"></script>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
+
