@@ -1,0 +1,5 @@
+*.report.html
+scratch/
+.DS_Store
+Thumbs.db
+
