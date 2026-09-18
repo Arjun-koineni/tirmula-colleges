@@ -103,6 +103,7 @@ $metaDesc = isset($metaDesc) ? $metaDesc : "Tirumala IIT & Medical Academy - Pre
       </div>
 
       <!-- Right Actions: Language Switch & Student Fee Portal -->
+
       <div class="flex items-center gap-3">
         <!-- Language Switcher -->
         <div class="flex items-center bg-slate-800 rounded-md p-0.5 border border-slate-700">
@@ -114,6 +115,7 @@ $metaDesc = isset($metaDesc) ? $metaDesc : "Tirumala IIT & Medical Academy - Pre
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
           <span>Sign In</span>
         </a>
+        <a href="/admin" class="bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium px-2.5 py-1 rounded text-xs transition flex items-center gap-1 border border-slate-700"><svg class="w-3 h-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg><span>Admin</span></a>
       </div>
     </div>
   </div>
@@ -218,7 +220,8 @@ $metaDesc = isset($metaDesc) ? $metaDesc : "Tirumala IIT & Medical Academy - Pre
 
       <div class="pt-2 pb-1 text-xs font-bold uppercase tracking-wider text-slate-400 px-3">Contact & Fees</div>
       <a href="/contact.php" class="block py-2.5 px-3 rounded-lg text-slate-800 font-medium hover:bg-slate-50">Contact & Campuses</a>
-      <a href="<?php echo FEE_PORTAL_URL; ?>" target="_blank" class="block py-2.5 px-3 rounded-lg text-amber-700 font-medium hover:bg-amber-50">💳 Student Fee Portal</a>
+      <a href="<?php echo FEE_PORTAL_URL; ?>" target="_blank" class="block py-2.5 px-3 rounded-lg text-amber-700 font-medium hover:bg-amber-50">🔐 Student & Parent Sign In</a>
+      <a href="/admin" class="block py-2.5 px-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50">⚙️ Staff / Admin Portal</a>
       <a href="/admissions.php" class="block mt-4 py-3 px-4 text-center rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold shadow">Apply for Admission 2025-26</a>
     </div>
 
