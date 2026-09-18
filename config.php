@@ -23,7 +23,7 @@ function loadEnv($path = __DIR__ . '/.env') {
         if (strpos($line, '=') !== false) {
             list($name, $value) = explode('=', $line, 2);
             $name = trim($name);
-            $value = trim(trim($value), ""'");
+            $value = trim($value, " \t\n\r\0\x0B\"'");
             if (!isset($_SERVER[$name]) && !isset($_ENV[$name])) {
                 putenv("$name=$value");
                 $_ENV[$name] = $value;
