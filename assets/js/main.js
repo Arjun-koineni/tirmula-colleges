@@ -122,26 +122,53 @@ function initMobileMenu() {
   });
 }
 
-// 3. iOS Floating Bottom Dock (Auto-Hide on Scroll, Reappear on Stop)
+// 3. iOS Floating Bottom Dock (Mobile Mode Only: Entrance, Scroll Hide/Show & Spring Tap Animations)
 function initScrollDock() {
   const dock = document.getElementById('ios-bottom-dock');
   if (!dock) return;
 
+  // Add interactive iOS tactile spring bounce on touch/click
+  const dockInteractive = dock.querySelectorAll('.ios-dock-item, #ios-search-btn');
+  dockInteractive.forEach(item => {
+    ['mousedown', 'touchstart'].forEach(evt => {
+      item.addEventListener(evt, () => {
+        item.classList.add('ios-item-pressed');
+      }, { passive: true });
+    });
+
+    ['mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach(evt => {
+      item.addEventListener(evt, () => {
+        if (item.classList.contains('ios-item-pressed')) {
+          item.classList.remove('ios-item-pressed');
+          item.classList.add('ios-item-bouncing');
+          setTimeout(() => item.classList.remove('ios-item-bouncing'), 450);
+        }
+      }, { passive: true });
+    });
+  });
+
+  // Fluid scroll hide & spring reveal on mobile
   let scrollTimeout = null;
   let lastScrollY = window.scrollY;
 
   window.addEventListener('scroll', () => {
+    // Dock is mobile-only (<1024px)
+    if (window.innerWidth >= 1024) return;
+
     const currentScrollY = window.scrollY;
     
+    // Hide smoothly when scrolling down past 60px
     if (currentScrollY > lastScrollY + 8 && currentScrollY > 60) {
       dock.classList.add('dock-hidden');
-    } else if (currentScrollY < lastScrollY - 12) {
+    } else if (currentScrollY < lastScrollY - 6) {
+      // Reappear immediately when scrolling up
       dock.classList.remove('dock-hidden');
     }
 
     lastScrollY = currentScrollY;
     clearTimeout(scrollTimeout);
 
+    // Reappear automatically when user pauses scrolling
     scrollTimeout = setTimeout(() => {
       dock.classList.remove('dock-hidden');
     }, 240);

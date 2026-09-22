@@ -3,6 +3,7 @@
  * Shared Footer Component
  * Tirumala IIT & Medical Academy
  */
+require_once __DIR__ . '/../config.php';
 ?>
   </main>
   <!-- MAIN PAGE CONTENT ENDS -->
@@ -87,6 +88,8 @@
        ========================================================== -->
   <div id="campus-call-modal" role="dialog" aria-modal="true" aria-labelledby="campus-modal-title">
     <div class="campus-call-card">
+      <!-- iOS Mobile Grab Bar -->
+      <div class="sm:hidden w-12 h-1.5 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mt-2.5 -mb-1"></div>
       
       <!-- Modal Header -->
       <div class="p-4 sm:p-5 border-b border-slate-200/80 bg-slate-50/80 flex items-center justify-between">

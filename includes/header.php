@@ -198,7 +198,7 @@ $metaDesc = isset($metaDesc) ? $metaDesc : "Tirumala IIT & Medical Academy - Pre
 
           <!-- Gallery Dropdown -->
           <div class="relative group py-4">
-            <button class="flex items-center gap-1 transition hover:text-blue-700 <?php echo currentNav === 'gallery' ? 'text-blue-700 font-bold' : ''; ?>">
+            <button class="flex items-center gap-1 transition hover:text-blue-700 <?php echo $currentNav === 'gallery' ? 'text-blue-700 font-bold' : ''; ?>">
               <span data-i18n="nav_gallery">Gallery</span>
               <svg class="w-4 h-4 text-slate-400 group-hover:text-blue-700 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
