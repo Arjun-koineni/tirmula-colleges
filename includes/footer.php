@@ -28,41 +28,44 @@
         <span>Campuses</span>
       </a>
 
-      <a href="tel:<?php echo INSTITUTE_PHONE_TEL; ?>" class="ios-dock-item text-emerald-600 hover:text-emerald-700">
+      <!-- Campus Call Selector Trigger -->
+      <button type="button" class="campus-call-trigger ios-dock-item text-emerald-600 hover:text-emerald-700" aria-label="Choose Campus to Call">
         <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
         <span>Call</span>
-      </a>
+      </button>
     </nav>
 
     <!-- Circular Floating Search Button (Apple Music Style) -->
-    <button type="button" id="ios-search-btn" class="ios-search-circle" aria-label="Open Instant Search">
+    <button type="button" id="ios-search-btn" class="ios-search-circle search-trigger-btn" aria-label="Open Instant Search">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
     </button>
   </div>
 
   <!-- ==========================================================
-       SPOTLIGHT LIVE SEARCH MODAL (For Students & Parents)
+       SPOTLIGHT UNIVERSAL LIVE SEARCH MODAL
        ========================================================== -->
-  <div id="spotlight-modal">
+  <div id="spotlight-modal" role="dialog" aria-modal="true" aria-labelledby="spotlight-title">
     <div class="spotlight-card">
       
       <!-- Search Input Bar -->
       <div class="p-4 border-b border-slate-200/80 flex items-center gap-3 bg-slate-50/50">
         <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <input type="text" id="spotlight-input" placeholder="Search by student name, roll no (TIMA202401), papers, campus..." class="w-full bg-transparent text-sm text-slate-800 placeholder-slate-400 outline-none">
-        <button type="button" id="spotlight-close-btn" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition" aria-label="Close search">
+        <input type="text" id="spotlight-input" placeholder="Search any ranker, course, campus, paper, hostel, fee portal..." class="w-full bg-transparent text-sm text-slate-800 placeholder-slate-400 outline-none">
+        <button type="button" id="spotlight-clear-btn" class="hidden p-1 text-slate-400 hover:text-slate-600 transition" aria-label="Clear Search">&times;</button>
+        <button type="button" id="spotlight-close-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition" aria-label="Close search">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
 
-      <!-- Quick Suggestion Filter Pills -->
-      <div class="px-4 py-2.5 bg-white border-b border-slate-100 flex items-center gap-2 overflow-x-auto text-[11px] font-semibold text-slate-600">
-        <span class="text-slate-400 flex-shrink-0">Popular:</span>
-        <button type="button" class="search-pill bg-slate-100 hover:bg-blue-50 hover:text-blue-700 px-2.5 py-1 rounded-full whitespace-nowrap transition" onclick="document.getElementById('spotlight-input').value='Sai Teja'; document.getElementById('spotlight-input').dispatchEvent(new Event('input'))">AIR 142 Sai Teja</button>
-        <button type="button" class="search-pill bg-slate-100 hover:bg-blue-50 hover:text-blue-700 px-2.5 py-1 rounded-full whitespace-nowrap transition" onclick="document.getElementById('spotlight-input').value='NEET'; document.getElementById('spotlight-input').dispatchEvent(new Event('input'))">NEET Toppers</button>
-        <button type="button" class="search-pill bg-slate-100 hover:bg-blue-50 hover:text-blue-700 px-2.5 py-1 rounded-full whitespace-nowrap transition" onclick="document.getElementById('spotlight-input').value='Model Papers'; document.getElementById('spotlight-input').dispatchEvent(new Event('input'))">Model Papers PDF</button>
-        <button type="button" class="search-pill bg-slate-100 hover:bg-blue-50 hover:text-blue-700 px-2.5 py-1 rounded-full whitespace-nowrap transition" onclick="document.getElementById('spotlight-input').value='Fee'; document.getElementById('spotlight-input').dispatchEvent(new Event('input'))">Fee Payment</button>
-        <button type="button" class="search-pill bg-slate-100 hover:bg-blue-50 hover:text-blue-700 px-2.5 py-1 rounded-full whitespace-nowrap transition" onclick="document.getElementById('spotlight-input').value='Vizag'; document.getElementById('spotlight-input').dispatchEvent(new Event('input'))">Vizag Campus</button>
+      <!-- Category Filter Pills -->
+      <div class="px-4 py-2 bg-white border-b border-slate-100 flex items-center gap-1.5 overflow-x-auto text-[11px] font-semibold text-slate-600 scrollbar-none">
+        <button type="button" class="search-cat-pill px-2.5 py-1 rounded-full whitespace-nowrap transition bg-blue-700 text-white shadow-xs" data-cat="all">All Results</button>
+        <button type="button" class="search-cat-pill px-2.5 py-1 rounded-full whitespace-nowrap transition bg-slate-100 hover:bg-slate-200 text-slate-700" data-cat="students">Rankers & Students</button>
+        <button type="button" class="search-cat-pill px-2.5 py-1 rounded-full whitespace-nowrap transition bg-slate-100 hover:bg-slate-200 text-slate-700" data-cat="campuses">Campuses</button>
+        <button type="button" class="search-cat-pill px-2.5 py-1 rounded-full whitespace-nowrap transition bg-slate-100 hover:bg-slate-200 text-slate-700" data-cat="courses">Courses & IIT/NEET</button>
+        <button type="button" class="search-cat-pill px-2.5 py-1 rounded-full whitespace-nowrap transition bg-slate-100 hover:bg-slate-200 text-slate-700" data-cat="facilities">Facilities</button>
+        <button type="button" class="search-cat-pill px-2.5 py-1 rounded-full whitespace-nowrap transition bg-slate-100 hover:bg-slate-200 text-slate-700" data-cat="papers">Model Papers (PDF)</button>
+        <button type="button" class="search-cat-pill px-2.5 py-1 rounded-full whitespace-nowrap transition bg-slate-100 hover:bg-slate-200 text-slate-700" data-cat="portals">Portals & Links</button>
       </div>
 
       <!-- Live Search Results Container -->
@@ -70,9 +73,9 @@
         <!-- Filled dynamically by main.js -->
       </div>
 
-      <!-- Spotlight Bottom Hint -->
-      <div class="px-4 py-2 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
-        <span>Tirumala Academy Instant Directory</span>
+      <!-- Spotlight Bottom Status & Keyboard Hint -->
+      <div class="px-4 py-2.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+        <span id="spotlight-count-text">Type to search anything across Tirumala Academy</span>
         <span class="hidden sm:inline">Press <kbd class="bg-white px-1.5 py-0.5 rounded border border-slate-200 text-slate-500 font-mono">ESC</kbd> to exit</span>
       </div>
 
@@ -80,31 +83,135 @@
   </div>
 
   <!-- ==========================================================
-       FLOATING HELPLINE TOGGLE WIDGET (Direct Dial Support)
+       CAMPUS CALL SELECTOR MODAL (Multi-Campus Direct Dial)
+       ========================================================== -->
+  <div id="campus-call-modal" role="dialog" aria-modal="true" aria-labelledby="campus-modal-title">
+    <div class="campus-call-card">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-200/80 bg-slate-50/80 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center flex-shrink-0 border border-emerald-500/20">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+          </div>
+          <div>
+            <h3 id="campus-modal-title" class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Connect with Tirumala Campuses</h3>
+            <p class="text-xs text-slate-500">Select which campus you want to call directly</p>
+          </div>
+        </div>
+        <button type="button" id="campus-call-close-btn" class="w-8 h-8 rounded-full bg-slate-200/70 hover:bg-slate-300 text-slate-600 flex items-center justify-center transition" aria-label="Close dialog">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Campus List -->
+      <div class="p-4 space-y-2.5 max-h-[68vh] overflow-y-auto">
+        
+        <!-- 1. Rajamahendravaram -->
+        <div class="campus-option-item p-3 sm:p-3.5 rounded-xl bg-slate-50 flex items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900 text-sm">1. Rajamahendravaram</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">Central HQ</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">Katheru Main Campus • Jr. Colleges & Schools</p>
+            <p class="text-xs font-mono font-bold text-emerald-600 mt-0.5">0883 297 0077</p>
+          </div>
+          <a href="tel:08832970077" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-sm transition flex-shrink-0">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+            <span>Call Now</span>
+          </a>
+        </div>
+
+        <!-- 2. Visakhapatnam -->
+        <div class="campus-option-item p-3 sm:p-3.5 rounded-xl bg-slate-50 flex items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900 text-sm">2. Visakhapatnam (Vizag)</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase">Port Hub</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">Maddilapalem & MVP Colony Main Road</p>
+            <p class="text-xs font-mono font-bold text-emerald-600 mt-0.5">0891 278 4077</p>
+          </div>
+          <a href="tel:08912784077" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-sm transition flex-shrink-0">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+            <span>Call Now</span>
+          </a>
+        </div>
+
+        <!-- 3. Bhimavaram -->
+        <div class="campus-option-item p-3 sm:p-3.5 rounded-xl bg-slate-50 flex items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900 text-sm">3. Bhimavaram</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 uppercase">Delta Wing</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">PP Road Campus Near Sompeta Junction</p>
+            <p class="text-xs font-mono font-bold text-emerald-600 mt-0.5">08816 225 077</p>
+          </div>
+          <a href="tel:08816225077" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-sm transition flex-shrink-0">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+            <span>Call Now</span>
+          </a>
+        </div>
+
+        <!-- 4. Tanuku -->
+        <div class="campus-option-item p-3 sm:p-3.5 rounded-xl bg-slate-50 flex items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900 text-sm">4. Tanuku</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-800 uppercase">Academic Wing</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">Bypass Road Near Overbridge Center</p>
+            <p class="text-xs font-mono font-bold text-emerald-600 mt-0.5">08819 245 077</p>
+          </div>
+          <a href="tel:08819245077" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-sm transition flex-shrink-0">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+            <span>Call Now</span>
+          </a>
+        </div>
+
+        <!-- 5. Payakaraopeta -->
+        <div class="campus-option-item p-3 sm:p-3.5 rounded-xl bg-slate-50 flex items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900 text-sm">5. Payakaraopeta</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800 uppercase">Residential</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">National Highway 16 Campus</p>
+            <p class="text-xs font-mono font-bold text-emerald-600 mt-0.5">08932 233 077</p>
+          </div>
+          <a href="tel:08932233077" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-sm transition flex-shrink-0">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+            <span>Call Now</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer WhatsApp Link -->
+      <div class="p-4 bg-slate-100/70 border-t border-slate-200/80 flex items-center justify-between text-xs">
+        <span class="text-slate-500">Need instant chat counseling?</span>
+        <a href="https://wa.me/<?php echo INSTITUTE_WHATSAPP; ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-bold text-emerald-700 hover:text-emerald-800 hover:underline">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.771.865 2.796.865 3.181 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.652-5.768-5.652zm0 10.362c-.894 0-1.636-.25-2.348-.68l-.168-.101-1.748.458.467-1.704-.112-.178c-.469-.747-.716-1.503-.715-2.39.001-2.531 2.059-4.59 4.616-4.59 2.556 0 4.615 2.059 4.616 4.59-.001 2.531-2.06 4.595-4.616 4.595z"/></svg>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       FLOATING HELPLINE TOGGLE WIDGET (Multi-Campus Direct Dial Support)
        ========================================================== -->
   <div class="helpline-side-toggle flex flex-col items-end">
-    <!-- Helpline Popup Card -->
-    <div id="helpline-popup" class="hidden mb-3 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 text-slate-800">
-      <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
-        <span class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
-          Direct Admissions Helpline
-        </span>
-      </div>
-      <p class="text-xs text-slate-500 leading-relaxed mb-3">Speak directly with our senior counseling desk for courses, fee concessions & hostel admissions.</p>
-      <a href="tel:<?php echo INSTITUTE_PHONE_TEL; ?>" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
-        <span>Call: <?php echo INSTITUTE_PHONE; ?></span>
-      </a>
-    </div>
-
-    <!-- Toggle Button with Pulsing Badge -->
-    <button type="button" id="helpline-toggle-btn" class="flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white p-3 sm:px-3.5 sm:py-2.5 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 border border-blue-500/50" aria-label="Call Tirumala Helpline">
+    <!-- Toggle Button opens the Campus Call Selector -->
+    <button type="button" id="helpline-toggle-btn" class="campus-call-trigger flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white p-3 sm:px-3.5 sm:py-2.5 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 border border-blue-500/50" aria-label="Call Tirumala Campuses">
       <div class="relative">
         <svg class="w-5 h-5 text-amber-300 fill-current" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
         <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 rounded-full animate-ping"></span>
       </div>
-      <span class="hidden sm:inline text-xs font-bold tracking-wide">Call Helpline</span>
+      <span class="hidden sm:inline text-xs font-bold tracking-wide">Call Campuses</span>
     </button>
   </div>
 

@@ -104,7 +104,9 @@ require_once __DIR__ . '/includes/header.php';
 
           <div class="space-y-3 text-xs text-slate-300 border-t border-slate-800 pt-4">
             <div class="flex items-start gap-3">
-              <span class="text-red-400 font-bold">ðŸ“</span>
+              <span class="w-6 h-6 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              </span>
               <div>
                 <strong class="text-white block font-semibold">Campus Address:</strong>
                 <span>Katheru, Rajamahendravaram (Rajahmundry), Andhra Pradesh 533102</span>
@@ -112,15 +114,19 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="flex items-start gap-3">
-              <span class="text-amber-400 font-bold">ðŸ“ž</span>
+              <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+              </span>
               <div>
-                <strong class="text-white block font-semibold">Helpline:</strong>
-                <a href="tel:<?php echo INSTITUTE_PHONE_TEL; ?>" class="hover:text-amber-400 font-mono text-sm"><?php echo INSTITUTE_PHONE; ?></a>
+                <strong class="text-white block font-semibold">Central Helpline:</strong>
+                <button type="button" class="campus-call-trigger hover:text-amber-400 font-mono text-sm text-left text-amber-300 font-bold"><?php echo INSTITUTE_PHONE; ?> (Choose Campus)</button>
               </div>
             </div>
 
             <div class="flex items-start gap-3">
-              <span class="text-emerald-400 font-bold">âœ‰ï¸</span>
+              <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+              </span>
               <div>
                 <strong class="text-white block font-semibold">Official Email:</strong>
                 <a href="mailto:<?php echo INSTITUTE_EMAIL; ?>" class="hover:text-emerald-400"><?php echo INSTITUTE_EMAIL; ?></a>
@@ -128,10 +134,12 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="flex items-start gap-3">
-              <span class="text-green-400 font-bold">ðŸ’¬</span>
+              <span class="w-6 h-6 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.771.865 2.796.865 3.181 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.652-5.768-5.652zm0 10.362c-.894 0-1.636-.25-2.348-.68l-.168-.101-1.748.458.467-1.704-.112-.178c-.469-.747-.716-1.503-.715-2.39.001-2.531 2.059-4.59 4.616-4.59 2.556 0 4.615 2.059 4.616 4.59-.001 2.531-2.06 4.595-4.616 4.595z"/></svg>
+              </span>
               <div>
                 <strong class="text-white block font-semibold">WhatsApp Admissions:</strong>
-                <a href="https://wa.me/<?php echo INSTITUTE_WHATSAPP; ?>" target="_blank" class="hover:underline text-green-400">+91 883 297 0077</a>
+                <a href="https://wa.me/<?php echo INSTITUTE_WHATSAPP; ?>" target="_blank" class="hover:underline text-green-400 font-medium">+91 883 297 0077</a>
               </div>
             </div>
           </div>

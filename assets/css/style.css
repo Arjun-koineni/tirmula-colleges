@@ -342,3 +342,303 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   outline: 2px solid #1d4ed8;
   outline-offset: 2px;
 }
+
+/* ==========================================================
+   LIGHTBOX OVERLAY (Fix for missing styles & broken preview)
+   ========================================================== */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100010;
+  background: rgba(3, 10, 28, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-overlay.active {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* ==========================================================
+   CAMPUS CALL SELECTOR MODAL
+   ========================================================== */
+#campus-call-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100008;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(7, 21, 51, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+#campus-call-modal.active {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.campus-call-card {
+  width: 100%;
+  max-width: 540px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 25px 65px -12px rgba(7, 21, 51, 0.45);
+  overflow: hidden;
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+#campus-call-modal.active .campus-call-card {
+  transform: scale(1) translateY(0);
+}
+
+.campus-option-item {
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.campus-option-item:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.15);
+}
+
+/* ==========================================================
+   MOBILE UTILITY BAR CLEAN SPACING (Never overlapping)
+   ========================================================== */
+.utility-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-weight: 700;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Theme toggle button micro-animation */
+.theme-toggle-btn svg {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+}
+.theme-toggle-btn:hover svg {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* ==========================================================
+   DARK MODE ARCHITECTURE (Seamless Global Inversion)
+   ========================================================== */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #070d1e !important;
+  color: #f1f5f9 !important;
+}
+
+/* Structural Backgrounds */
+html.dark .bg-white {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-gray-50 {
+  background-color: #0a1124 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .bg-slate-100,
+html.dark .bg-gray-100 {
+  background-color: #16223e !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .bg-slate-200,
+html.dark .bg-gray-200 {
+  background-color: #1e293b !important;
+}
+
+/* Text Hierarchy */
+html.dark .text-slate-950,
+html.dark .text-slate-900,
+html.dark .text-tnavy {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-800,
+html.dark .text-slate-700 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-slate-400 {
+  color: #64748b !important;
+}
+
+/* Borders */
+html.dark .border-slate-200,
+html.dark .border-slate-100,
+html.dark .border-slate-300,
+html.dark .border-slate-200\/80 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Navigation & Glass Headers */
+html.dark .header-glass {
+  background-color: rgba(11, 19, 43, 0.94) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .header-scrolled {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Mobile Slide-Out Drawer */
+html.dark #mobile-drawer {
+  background-color: #0a1124 !important;
+  color: #f1f5f9 !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark #mobile-drawer .border-b,
+html.dark #mobile-drawer .border-t {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark #mobile-drawer a {
+  color: #e2e8f0 !important;
+}
+
+html.dark #mobile-drawer a:hover {
+  background-color: #16223e !important;
+  color: #60a5fa !important;
+}
+
+/* iOS Floating Bottom Dock in Dark Mode */
+html.dark .ios-dock-capsule,
+html.dark .ios-search-circle {
+  background: rgba(15, 23, 42, 0.94) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark .ios-dock-item {
+  color: #94a3b8 !important;
+}
+
+html.dark .ios-dock-item.active {
+  color: #60a5fa !important;
+  background: rgba(37, 99, 235, 0.25) !important;
+}
+
+html.dark .ios-search-circle {
+  color: #f1f5f9 !important;
+}
+html.dark .ios-search-circle:hover {
+  background: #1e293b !important;
+  color: #60a5fa !important;
+}
+
+/* Spotlight Search Modal in Dark Mode */
+html.dark .spotlight-card {
+  background: rgba(15, 23, 42, 0.98) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.8) !important;
+}
+
+html.dark #spotlight-input {
+  color: #f8fafc !important;
+}
+
+html.dark #spotlight-results a:hover {
+  background-color: #16223e !important;
+}
+
+/* Campus Call Modal in Dark Mode */
+html.dark .campus-call-card {
+  background-color: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+}
+
+html.dark .campus-option-item {
+  background-color: #16223e !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark .campus-option-item:hover {
+  border-color: #60a5fa !important;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Cards & Hover Effects in Dark Mode */
+html.dark .card-hover-lift {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .card-hover-lift:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Forms & Inputs in Dark Mode */
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark select,
+html.dark textarea {
+  background-color: #16223e !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* WhatsApp Agent Card in Dark Mode */
+html.dark #whatsapp-agent-card {
+  background-color: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark #whatsapp-agent-card .bg-white {
+  background-color: #16223e !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Search Highlights */
+mark.search-hl {
+  background-color: #fde047;
+  color: #0f172a;
+  border-radius: 2px;
+  padding: 0 2px;
+  font-weight: 700;
+}
+html.dark mark.search-hl {
+  background-color: #854d0e;
+  color: #fef08a;
+}
+
