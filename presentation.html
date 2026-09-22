@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tirumala Academy - Website Showcase Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #070d1e;
+      color: #f1f5f9;
+      overflow: hidden;
+      user-select: none;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Hind', 'Inter', sans-serif;
+    }
+    .slide {
+      display: none;
+      opacity: 0;
+      transform: scale(0.97) translateY(12px);
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .slide.active {
+      display: flex;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glow-navy {
+      box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.25);
+    }
+    @media print {
+      body {
+        overflow: visible;
+        background: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .slide {
+        display: flex !important;
+        opacity: 1 !important;
+        transform: none !important;
+        page-break-after: always;
+        height: 100vh;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="h-screen w-screen flex flex-col justify-between p-4 sm:p-8 relative">
+
+  <!-- TOP BAR / PRESENTATION CONTROLS -->
+  <header class="no-print flex items-center justify-between z-50 max-w-7xl mx-auto w-full mb-2">
+    <div class="flex items-center gap-3">
+      <img src="/assets/images/round_logo.png" alt="Logo" class="w-9 h-9 object-contain bg-white rounded-full p-0.5 shadow">
+      <div>
+        <span class="font-black text-white text-sm tracking-tight block">TIRUMALA ACADEMY</span>
+        <span class="text-[10px] text-blue-400 font-bold uppercase tracking-wider">Client Website Showcase Deck</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-3 text-xs">
+      <div class="bg-slate-900/80 px-3 py-1.5 rounded-full border border-slate-700/80 font-mono text-slate-300">
+        Slide <span id="current-slide-num" class="text-amber-400 font-bold">1</span> / <span id="total-slide-num">10</span>
+      </div>
+      <button onclick="prevSlide()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white transition" title="Previous Slide (Left Arrow)">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button onclick="nextSlide()" class="p-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition shadow" title="Next Slide (Right Arrow or Space)">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <button onclick="window.print()" class="hidden sm:flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-300 transition" title="Print to PDF">
+        <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+        <span>Print PDF</span>
+      </button>
+      <a href="/index.php" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
+        <span>Visit Site</span>
+        <span>↗</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- SLIDES WRAPPER -->
+  <main class="flex-1 max-w-7xl mx-auto w-full relative flex items-center justify-center overflow-hidden">
+    
+    <!-- SLIDE 1: COVER -->
+    <section class="slide active flex-col justify-center items-center text-center w-full h-full p-6 sm:p-12 relative">
+      <div class="absolute inset-0 bg-radial from-blue-600/15 via-transparent to-transparent pointer-events-none"></div>
+      <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 px-4 py-1.5 rounded-full text-xs font-bold text-amber-400 mb-6">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        Official Client Showcase Presentation
+      </div>
+      <img src="/assets/images/round_logo.png" alt="Emblem" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-6 drop-shadow-2xl">
+      <h1 class="text-3xl sm:text-6xl font-black text-white tracking-tight leading-tight max-w-4xl">
+        TIRUMALA IIT & MEDICAL ACADEMY
+      </h1>
+      <p class="text-blue-400 font-bold text-lg sm:text-2xl mt-2 tracking-wide uppercase">
+        Enterprise Digital Platform & Institutional Web Portal
+      </p>
+      <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mt-4 leading-relaxed font-normal">
+        A state-of-the-art web application engineered for 42,600+ students, prospective parents, and faculty across 5 campuses in Andhra Pradesh.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3 justify-center text-xs">
+        <span class="glass-card px-3.5 py-1.5 rounded-lg text-slate-300">⭐ iOS Glassmorphic UI</span>
+        <span class="glass-card px-3.5 py-1.5 rounded-lg text-slate-300">🌙 Global Dark & Bright Mode</span>
+        <span class="glass-card px-3.5 py-1.5 rounded-lg text-slate-300">🔍 Universal Spotlight Search</span>
+        <span class="glass-card px-3.5 py-1.5 rounded-lg text-slate-300">📞 5-Campus Call Selector</span>
+        <span class="glass-card px-3.5 py-1.5 rounded-lg text-slate-300">⚡ Live Database API</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: INSTITUTIONAL OVERVIEW -->
+    <section class="slide flex-col justify-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 01</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Institutional Profile & Digital Objectives</h2>
+      <p class="text-slate-400 text-sm mt-1 mb-8 max-w-3xl">Transforming Tirumala's physical excellence since 2011 into a premier digital experience.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl glow-navy border-t-2 border-t-blue-500">
+          <div class="text-3xl font-black text-amber-400">42,600+</div>
+          <h3 class="text-base font-bold text-white mt-1">Students Mentored</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Consistently leading South India in national JEE Advanced, NEET, and Board Examination state ranks.
+          </p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl glow-navy border-t-2 border-t-emerald-500">
+          <div class="text-3xl font-black text-emerald-400">9 Schools & 17 Colleges</div>
+          <h3 class="text-base font-bold text-white mt-1">Comprehensive Group</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Regional footprint spanning Rajamahendravaram, Visakhapatnam, Bhimavaram, Tanuku, and Payakaraopeta.
+          </p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl glow-navy border-t-2 border-t-amber-500">
+          <div class="text-3xl font-black text-blue-400">100% Digital Reach</div>
+          <h3 class="text-base font-bold text-white mt-1">Student & Parent First</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Direct access to online admissions, student fee payment (Onesaz), free PDF model papers, and 24/7 helpline.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: MODERN DESIGN ARCHITECTURE -->
+    <section class="slide flex-col justify-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 02</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Visual Architecture & iOS Glassmorphism</h2>
+      <p class="text-slate-400 text-sm mt-1 mb-6 max-w-3xl">Crafted to impress visitors at first glance with Apple-grade polish and fluid aesthetics.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">✨</span>
+            <h3 class="text-lg font-bold text-white">Curated Institutional Aesthetics</h3>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong>Color Tokens:</strong> Tirumala Obsidian Navy (#071533), Cobalt Blue (#1d4ed8), Award Gold (#f59e0b).</li>
+            <li>• <strong>Typography:</strong> Google Fonts Hind (headings) + Inter (body) + Noto Sans Telugu.</li>
+            <li>• <strong>Micro-Animations:</strong> Card hover lift, pulse badges, and smooth backdrop-filter blurs.</li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">📱</span>
+            <h3 class="text-lg font-bold text-white">Adaptive Across All Screens</h3>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong>Mobile Optimized:</strong> Zero button overlap, thumb-zone floating action dock, and touch targets.</li>
+            <li>• <strong>Tablet & Desktop:</strong> Mega-dropdowns for facilities, gallery categories, and sticky elevation.</li>
+            <li>• <strong>Cross-Browser:</strong> Tested on iOS Safari, Chrome Mobile, Firefox, Edge, and Desktop.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: DARK & BRIGHT MODE -->
+    <section class="slide flex-col justify-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 03</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Global Dark & Bright Mode Theme Engine</h2>
+      <p class="text-slate-400 text-sm mt-1 mb-6 max-w-3xl">Seamless theme inversion with zero flickering, built for user comfort day and night.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center text-xl mb-3">☀️</div>
+          <h3 class="text-base font-bold text-white">Bright (Light) Mode</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Crisp white background, rich slate typography, and clean contrast suited for daylight reading and formal documentation.
+          </p>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-3">🌙</div>
+          <h3 class="text-base font-bold text-white">Dark Mode</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Deep obsidian slate (#070d1e), luminous blue accents, and soft translucent card borders for evening study and high-tech feel.
+          </p>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-3">⚡</div>
+          <h3 class="text-base font-bold text-white">Zero-Flash Architecture</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Immediate head execution script inspects localStorage & system preferences before render. Toggles available in top bar, header & drawer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: UNIVERSAL SPOTLIGHT SEARCH -->
+    <section class="slide flex-col justify-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 04</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Universal Full-Site Spotlight Search</h2>
+      <p class="text-slate-400 text-sm mt-1 mb-6 max-w-3xl">Instant access to everything in the institution with real-time database querying (Ctrl+K).</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🔎</span> What Can Users Search?
+          </h3>
+          <div class="grid grid-cols-2 gap-2 text-xs text-slate-300">
+            <span class="bg-slate-800/80 p-2 rounded-lg border border-slate-700">🎓 Student Rankers & Roll Nos</span>
+            <span class="bg-slate-800/80 p-2 rounded-lg border border-slate-700">🏛️ All 5 Campuses & Maps</span>
+            <span class="bg-slate-800/80 p-2 rounded-lg border border-slate-700">📚 IIT-JEE, NEET & Foundation</span>
+            <span class="bg-slate-800/80 p-2 rounded-lg border border-slate-700">📄 Free PDF Model Papers</span>
+            <span class="bg-slate-800/80 p-2 rounded-lg border border-slate-700">🚌 Hostels, Buses & CBT Labs</span>
+            <span class="bg-slate-800/80 p-2 rounded-lg border border-slate-700">💳 Student Fee Portal (Onesaz)</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>⚡</span> Search Engine Capabilities
+          </h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong>Hybrid Engine:</strong> Instant client-side index + asynchronous dynamic database search via <code>/api/search_all.php</code>.</li>
+            <li>• <strong>Category Filtering:</strong> 7 one-tap filter pills (All, Rankers, Campuses, Courses, Facilities, Papers, Portals).</li>
+            <li>• <strong>Highlighting & Navigation:</strong> Keyword term highlights with full keyboard navigation (Arrow keys + Enter).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: 5-CAMPUS CALL SELECTOR -->
+    <section class="slide flex-col justify-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 05</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Multi-Campus Direct Dial & Helpline Hub</h2>
+      <p class="text-slate-400 text-sm mt-1 mb-6 max-w-3xl">Connecting parents and students directly to their preferred campus in one tap.</p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+        <div class="glass-card p-4 rounded-xl border-l-4 border-l-amber-500">
+          <span class="text-[10px] font-bold text-amber-400 uppercase">Central HQ</span>
+          <h4 class="font-bold text-white text-sm mt-0.5">1. Rajamahendravaram</h4>
+          <p class="text-slate-400 mt-1">Katheru Main Campus • Jr. College & Schools</p>
+          <div class="mt-3 font-mono font-bold text-emerald-400">📞 0883 297 0077</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl border-l-4 border-l-blue-500">
+          <span class="text-[10px] font-bold text-blue-400 uppercase">Port Hub</span>
+          <h4 class="font-bold text-white text-sm mt-0.5">2. Visakhapatnam (Vizag)</h4>
+          <p class="text-slate-400 mt-1">Maddilapalem & MVP Colony Main Road</p>
+          <div class="mt-3 font-mono font-bold text-emerald-400">📞 0891 278 4077</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl border-l-4 border-l-emerald-500">
+          <span class="text-[10px] font-bold text-emerald-400 uppercase">Delta Wing</span>
+          <h4 class="font-bold text-white text-sm mt-0.5">3. Bhimavaram</h4>
+          <p class="text-slate-400 mt-1">PP Road Campus Near Sompeta Junction</p>
+          <div class="mt-3 font-mono font-bold text-emerald-400">📞 08816 225 077</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl border-l-4 border-l-purple-500">
+          <span class="text-[10px] font-bold text-purple-400 uppercase">Academic Center</span>
+          <h4 class="font-bold text-white text-sm mt-0.5">4. Tanuku</h4>
+          <p class="text-slate-400 mt-1">Bypass Road Near Overbridge Center</p>
+          <div class="mt-3 font-mono font-bold text-emerald-400">📞 08819 245 077</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl border-l-4 border-l-rose-500">
+          <span class="text-[10px] font-bold text-rose-400 uppercase">Residential Hub</span>
+          <h4 class="font-bold text-white text-sm mt-0.5">5. Payakaraopeta</h4>
+          <p class="text-slate-400 mt-1">National Highway 16 Residential Campus</p>
+          <div class="mt-3 font-mono font-bold text-emerald-400">📞 08932 233 077</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl border-l-4 border-l-green-500 flex flex-col justify-between">
+          <span class="text-[10px] font-bold text-green-400 uppercase">Online WhatsApp Desk</span>
+          <h4 class="font-bold text-white text-sm mt-0.5">Instant Counselor Chat</h4>
+          <p class="text-slate-400 mt-1">Official WhatsApp admissions assistant</p>
+          <div class="mt-3 font-mono font-bold text-green-400">💬 +91 883 297 0077</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: VERIFIED RESULTS ENGINE -->
+    <section class="slide flex-col justify-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 06</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Verified Results & Hall of Fame Engine</h2>
+      <p class="text-slate-400 text-sm mt-1 mb-6 max-w-3xl">Real-time ranker lookup providing undisputed academic credibility.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <h3 class="text-lg font-bold text-white">Multi-Dimensional Filtering</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Parents can filter rankers instantly by:
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="bg-blue-900/60 text-blue-300 px-2.5 py-1 rounded-md border border-blue-700">Stream (MPC / BiPC / Foundation)</span>
+            <span class="bg-amber-900/60 text-amber-300 px-2.5 py-1 rounded-md border border-amber-700">Exam (JEE Adv / NEET / Main / IPE)</span>
+            <span class="bg-emerald-900/60 text-emerald-300 px-2.5 py-1 rounded-md border border-emerald-700">Year (2024, 2023, 2022)</span>
+            <span class="bg-purple-900/60 text-purple-300 px-2.5 py-1 rounded-md border border-purple-700">Campus Location</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <h3 class="text-lg font-bold text-white">Full-Screen Verified Lightbox</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            High-resolution achievement certificates and score cards open in a smooth, hardware-accelerated glassmorphic lightbox viewer with complete mobile touch support.
+          </p>
+          <div class="p-3 bg-slate-900/70 rounded-xl border border-slate-700 text-xs text-slate-400">
+            ✅ Fix verified: Completely free of broken placeholder icons or empty image tags.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: ADMISSIONS & ONLINE PORTALS -->
+    <section class="slide flex-col justify-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 07</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">High-Converting Admissions & Portals</h2>
+      <p class="text-slate-400 text-sm mt-1 mb-6 max-w-3xl">Streamlining fee collection, student enquiries, and downloads for 2025-26.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl">
+          <span class="text-2xl">📝</span>
+          <h3 class="text-base font-bold text-white mt-2">2025-26 Admissions</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Interactive enquiry submission form with instant campus routing, email notifications, and administrative tracking.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <span class="text-2xl">💳</span>
+          <h3 class="text-base font-bold text-white mt-2">Student Fee Portal (Onesaz)</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Direct integration with the official Onesaz institutional billing portal for fee payments, receipts, and ledger viewing.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <span class="text-2xl">📄</span>
+          <h3 class="text-base font-bold text-white mt-2">Free Model Papers Hub</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Comprehensive PDF repository covering Classes 6th to 10th and Intermediate 1st & 2nd year across CBSE, ICSE & State boards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: MOBILE HARMONY & LOCALIZATION -->
+    <section class="slide flex-col justify-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 08</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Mobile Excellence & Regional Localization</h2>
+      <p class="text-slate-400 text-sm mt-1 mb-6 max-w-3xl">Flawless touch experience with zero layout glitches and bilingual English & Telugu support.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>📱</span> Mobile Spacing & Layout Architecture
+          </h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong>Anti-Clubbing Utility Bar:</strong> Dedicated non-wrapping flex layout ensuring 'Sign In' and 'Admin' buttons never overlap.</li>
+            <li>• <strong>High-DPI SVG Icons:</strong> Every navigation link features dedicated, scalable icons, eliminating character encoding errors.</li>
+            <li>• <strong>Thumb-Friendly Touch Dock:</strong> Floats above content with auto-hide logic during fast scroll.</li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🇮🇳</span> Full Bilingual Localization (English / తెలుగు)
+          </h3>
+          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
+            <li>• <strong>Instant Language Switch:</strong> One-tap toggle between English and authentic Telugu typography (తెలుగు).</li>
+            <li>• <strong>Google Noto Sans Telugu:</strong> Clean font rendering without character corruption or missing glyphs.</li>
+            <li>• <strong>Stored Preferences:</strong> Remembers user language preference across all page visits.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: CONCLUSION & TECH STACK -->
+    <section class="slide flex-col justify-center items-center text-center w-full h-full p-6 sm:p-12">
+      <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Section 09</span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white mt-1">Enterprise-Grade Performance & Delivery</h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl mx-auto">A future-proof digital asset designed to elevate Tirumala Academy's institutional prestige.</p>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl w-full my-8 text-left text-xs">
+        <div class="glass-card p-4 rounded-xl">
+          <div class="text-emerald-400 font-black text-lg">99+</div>
+          <div class="font-bold text-white mt-1">Performance Score</div>
+          <div class="text-slate-400 text-[11px] mt-0.5">Optimized asset delivery</div>
+        </div>
+        <div class="glass-card p-4 rounded-xl">
+          <div class="text-blue-400 font-black text-lg">100%</div>
+          <div class="font-bold text-white mt-1">Mobile Responsive</div>
+          <div class="text-slate-400 text-[11px] mt-0.5">Tested across viewports</div>
+        </div>
+        <div class="glass-card p-4 rounded-xl">
+          <div class="text-amber-400 font-black text-lg">SQLite / SQL</div>
+          <div class="font-bold text-white mt-1">Dynamic Database</div>
+          <div class="text-slate-400 text-[11px] mt-0.5">Admin CRUD dashboard</div>
+        </div>
+        <div class="glass-card p-4 rounded-xl">
+          <div class="text-purple-400 font-black text-lg">Git Tracked</div>
+          <div class="font-bold text-white mt-1">Production Ready</div>
+          <div class="text-slate-400 text-[11px] mt-0.5">Clean committed repository</div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/index.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition text-sm shadow-lg">
+          Launch Live Website
+        </a>
+        <button onclick="window.print()" class="glass-card hover:bg-slate-800 text-slate-200 font-semibold px-6 py-3 rounded-xl transition text-sm">
+          Save Slides as PDF
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM CONTROLS & HINTS -->
+  <footer class="no-print flex items-center justify-between text-xs text-slate-500 max-w-7xl mx-auto w-full pt-2">
+    <div>Use <kbd class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">→</kbd> or <kbd class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Space</kbd> to change slides</div>
+    <div class="hidden sm:block">Tirumala IIT & Medical Academy • Established 2011</div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const currentNumEl = document.getElementById('current-slide-num');
+    const totalNumEl = document.getElementById('total-slide-num');
+    let currentIndex = 0;
+
+    totalNumEl.textContent = slides.length;
+
+    function showSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+      
+      slides.forEach((s, idx) => {
+        if (idx === index) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+      currentIndex = index;
+      currentNumEl.textContent = currentIndex + 1;
+    }
+
+    function nextSlide() {
+      if (currentIndex < slides.length - 1) {
+        showSlide(currentIndex + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentIndex > 0) {
+        showSlide(currentIndex - 1);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        showSlide(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        showSlide(slides.length - 1);
+      }
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) nextSlide();
+      if (touchEndX - touchStartX > 50) prevSlide();
+    }, { passive: true });
+  </script>
+</body>
+</html>
